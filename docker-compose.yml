@@ -33,36 +33,5 @@ services:
             - ./docker/db/sql:/docker-entrypoint-initdb.d
         ports:
             - 3306:3306
-
-#     app:
-#         build:
-#             context: .
-#             dockerfile: Dockerfile
-#         image: laravel-starter-app
-#         container_name: laravel-starter-app
-#         restart: unless-stopped
-#         volumes:
-#             - ./app:/var/www/html
-#         ports:
-#             - 8080:8000
-#         depends_on:
-#             - db
-
-#     db:
-#         platform: linux/amd64
-#         image: mysql:5.7
-#         container_name: laravel-starter-db
-#         restart: unless-stopped
-#         environment:
-#             MYSQL_DATABASE: ${DB_DATABASE}
-#             MYSQL_USER: ${DB_USERNAME}
-#             MYSQL_PASSWORD: ${DB_PASSWORD}
-#             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-#             MYSQL_ARROW_EMPTY_PASSWORD: ${DB_ALLOW_EMPTY_PASSWORD}
-#             TZ: Tokyo/Asia
-#         volumes:
-#             - db_data:/var/lib/mysql
-#             - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-
-# volumes:
-#     db_data:
+volumes:
+    db_data:
